@@ -11,5 +11,5 @@
 .app {
   min-height: 100vh;
   display: grid;
-  background: #e2d4ff;
+  background: linear-gradient(in oklab, #5DA9E9, #96C9F4);
 }

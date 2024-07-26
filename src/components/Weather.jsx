@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './Weather.css'
 import search_icon from '../assets/search.png'
 import clear_icon from '../assets/clear.png'
+import clearn_icon from '../assets/clearn.png'
 import cloud_icon from '../assets/cloud.png'
 import drizzlen_icon from '../assets/drizzlen.png'
 import drizzled_icon from '../assets/drizzled.png'
@@ -21,7 +22,7 @@ const Weather = () => {
 
     const allIcons = {
         "01d": clear_icon,
-        "01n": clear_icon,
+        "01n": clearn_icon,
         "02d": cloud_icon,
         "02n": cloud_icon,
         "03d": cloud_icon,
@@ -41,7 +42,7 @@ const Weather = () => {
     }
     const search = async (city, country) => {
         if (!city || !country === "") {
-            alert("Please enter a city and country");
+            alert("Ingrese una ciudad y un país");
             return;
         };
         try {
@@ -79,7 +80,7 @@ const Weather = () => {
     return (
         <div className='weather'>
             <div className="search-bar">
-                <input ref={inputRef} type="text" placeholder='Search' />
+                <input ref={inputRef} type="text" placeholder='Buscar' />
                 <img src={search_icon} alt="" onClick={() => search(inputRef.current.value)} />
             </div>
             {weatherData ? <>
@@ -91,14 +92,14 @@ const Weather = () => {
                         <img src={humidity_icon} alt="" />
                         <div>
                             <p>{weatherData?.humidity}%</p>
-                            <span>Humidity</span>
+                            <span>Humedad</span>
                         </div>
                     </div>
                     <div className="col">
                         <img src={wind_icon} alt="" />
                         <div>
                             <p>{weatherData?.windSpeed} Km/h</p>
-                            <span>Wind Speed</span>
+                            <span>Velocidad del viento</span>
                         </div>
                     </div>
                 </div>
